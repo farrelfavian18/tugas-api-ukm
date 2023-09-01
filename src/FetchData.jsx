@@ -4,12 +4,20 @@ import axios from 'axios';
 
 function FetchData(){
     const [data, setData] = useState([])
-  useEffect(() => {
-    axios.get('https://strapi-rygs.onrender.com/api/prodis')
-    // .then(res => console.log(res))
-    .then(res => setData(res.data))
-    .catch(err => console.log(err))
-  }, []);
+    // const [angkatan, setAngkatan] = useState([])
+    // const [tipeKelas, setTipeKelas] = useState([])
+    // const [mahasiswa, setMahasiswa] = useState([])
+
+    useEffect(() => {
+        // axios.get('https://strapi-rygs.onrender.com/api/prodis')
+        axios.get('https://jsonplaceholder.typicode.com/users')
+        // .then(res => console.log(res))
+        .then(res => setData(res.data))
+        // .then(res => setAngkatan(res.data))
+        // .then(res => setTipeKelas(res.data))
+        // .then(res => setMahasiswa(res.data))
+        .catch(err => console.log(err))
+    }, []);
 
   return (
     <>
@@ -18,22 +26,31 @@ function FetchData(){
       </div>
       <div className='container'>
         <div className='mt-3'>
-            <h1>ID Prodi</h1>
-            <h1>Nama_Prodi</h1>
-            <h1>Kepala Prodi</h1>
-            <h1>Sekretaris</h1>
-            <table>
-                <th>
+            <table className='table'>
+                <thead>
                     <tr>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>City</th>
                     </tr>
-                </th>
+                </thead>
+                <tbody>
+                    {
+                        data.map((user, index) => {
+                            return <tr key={index}>
+                                <td>{user.id}</td>
+                                <td>{user.name}</td>
+                                <td>{user.email}</td>
+                                <td>{user.address.city}</td>
+                            </tr>
+                        })
+                    }
+                </tbody>
             </table>
         </div>
       </div>
+      
     </>
   )
 }
