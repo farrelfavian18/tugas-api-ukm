@@ -62,7 +62,7 @@ const Prodi = () => {
                         {angkatan.data[kelas].map((mahasiswa, index) => (
                           <tr key={index}>
                             <td class="border border-slate-500">
-                            <Link to={`/mahasiswa/${angkatan.tahun_masuk.slice(-2)}${prodi.kode_prodi}${"000" + mahasiswa.id}`}>
+                            <Link to={`/mahasiswa/${angkatan.tahun_masuk.slice(-2)}${parseInt(angkatan.tahun_masuk.slice(-2)) + 4}${prodi.kode_prodi}${"000" + mahasiswa.id}`}>
                               {generateNPM(angkatan.tahun_masuk, prodi.kode_prodi, mahasiswa.id)}</Link>
                             </td>
                             <td class="border border-slate-500">{mahasiswa.nama}</td>
