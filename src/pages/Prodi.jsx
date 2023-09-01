@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 // const navigate = useNavigate();
 
@@ -61,8 +62,8 @@ const Prodi = () => {
                         {angkatan.data[kelas].map((mahasiswa, index) => (
                           <tr key={index}>
                             <td class="border border-slate-500">
-                            <button className="text-1xl font-bold underline" onClick={() => navigate("/mahasiswa/{npm}")}>
-                              {generateNPM(angkatan.tahun_masuk, prodi.kode_prodi, mahasiswa.id)}</button>
+                            <Link to={`/mahasiswa/${angkatan.tahun_masuk.slice(-2)}${prodi.kode_prodi}${"000" + mahasiswa.id}`}>
+                              {generateNPM(angkatan.tahun_masuk, prodi.kode_prodi, mahasiswa.id)}</Link>
                             </td>
                             <td class="border border-slate-500">{mahasiswa.nama}</td>
                             <td class="border border-slate-500">{
