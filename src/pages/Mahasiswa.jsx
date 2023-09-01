@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom"
 import { useState ,useEffect} from "react";
+import axios from "axios";
 
 function Detail(){
     
@@ -15,18 +16,16 @@ function Detail(){
     fetchData()
   }, []);
 
-    const NPM = useParams()
+    const {id} = useParams()
 
-    console.log(NPM)
+    // console.log(NPM)
     return (
         <div>
-            <div className="text-2xl">
-                <h1>NPM: {mahasiswa.id}</h1>
-                <h1>Nama : {mahasiswa.nama}</h1>
-                <h1>Jenis Kelamin : {mahasiswa.jenis_kelamin}</h1>
-                <h1>Alamat : {mahasiswa.alamat}</h1>
-                <h1>Hobi : {mahasiswa.hobi.join(", ")}</h1>
-            </div>
+          <h3>NPM: {id}</h3>
+          <h3>Nama: {id}</h3>
+          <h3>Jenis Kelamin: {id}</h3>
+          <h3>Alamat: {id}</h3>
+          <h3>Hobi: {id}</h3>
         </div>
     )
 }
