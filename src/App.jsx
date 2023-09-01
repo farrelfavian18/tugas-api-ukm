@@ -27,8 +27,8 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/prodi' element={<Prodi />} />
-        <Route path='/mahasiswa{npm}' element={<Mahasiswa />} />
-        <Route path='/mahasiswa{npm}' element={<Mahasiswa />} />
+        <Route path='/mahasiswa/:id' element={<Mahasiswa />} />
+        {/* <Route path='/mahasiswa' element={<Mahasiswa />} /> */}
         <Route path='*' element={<Notfound />} />
       </Routes>
     </BrowserRouter>

@@ -8,8 +8,7 @@ const Home = () => {
     <div className="text-2xl">
       <h1>Ini Home</h1>
       <div>
-        <button className="text-3xl font-bold underline"
-         onClick={() => navigate("/prodi")}>Prodi</button>
+        <button className="text-3xl font-bold underline" onClick={() => navigate("/prodi")}>Prodi</button>
       </div>
     </div>
   )

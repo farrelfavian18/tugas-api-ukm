@@ -1,9 +1,12 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
-const navigate = useNavigate();
+// const navigate = useNavigate();
 
 const Prodi = () => {
+
+  const navigate = useNavigate();
 
   const [data, setData] = useState(null);
 
@@ -58,7 +61,7 @@ const Prodi = () => {
                         {angkatan.data[kelas].map((mahasiswa, index) => (
                           <tr key={index}>
                             <td class="border border-slate-500">
-                            <button className="text-3xl font-bold underline" onClick={() => navigate("/mahasiswa")}>
+                            <button className="text-1xl font-bold underline" onClick={() => navigate("/mahasiswa/{npm}")}>
                               {generateNPM(angkatan.tahun_masuk, prodi.kode_prodi, mahasiswa.id)}</button>
                             </td>
                             <td class="border border-slate-500">{mahasiswa.nama}</td>
